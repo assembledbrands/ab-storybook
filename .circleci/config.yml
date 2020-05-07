@@ -1,0 +1,33 @@
+version: 2.1
+orbs:
+  node: circleci/node@1.1.6
+  aws-s3: circleci/aws-s3@1.0.15
+jobs:
+  build-and-test:
+    docker:
+      - image: circleci/node:10.16.3
+    steps:
+      - checkout
+      - node/with-cache:
+          steps:
+            - run: yarn install
+            - run: yarn build
+#            - run:
+#                name: "yarn test:ci"
+#                command: yarn test:ci
+#                environment:
+#                  JEST_JUNIT_OUTPUT_DIR: "reports/junit"
+#                  JEST_JUNIT_OUTPUT_NAME: "test_results.xml"
+#      - store_test_results:
+#          path: reports/junit
+#      - store_artifacts:
+#          path: reports/junit
+      - persist_to_workspace:
+          root: .
+          paths:
+            - build
+
+workflows:
+  build:
+    jobs:
+      - build-and-test
