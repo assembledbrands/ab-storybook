@@ -1,0 +1,86 @@
+.dropzone {
+    background-color: #F3F5F7;
+    border: 1px dashed rgba(0, 0, 0, 0.38);
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+.droppableArea {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 15px;
+}
+
+.droppableArea > span {
+    font-family: Futura Std;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    letter-spacing: 1px;
+    color: rgba(0, 0, 0, 0.87);
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+.droppableArea > button {
+    background-color: #F3F5F7;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    border-radius: 4px;
+    color: #2D6AD2;
+    font-family: Futura Std;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    letter-spacing: 1.25px;
+    text-transform: uppercase;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.acceptedFiles {
+    font-family: Futura Std;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.15px;
+    color: rgba(0, 0, 0, 0.87);
+    width: 100%;
+}
+
+.acceptedFiles:empty {
+    padding-bottom: 30px;
+}
+
+.acceptedFile {
+    display: flex;
+    align-items: center;
+    padding-left: 16px;
+}
+
+.acceptedFile > svg {
+    padding-bottom: 3px;
+}
+
+.filenameAndRemove {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 16px 16px 0;
+    margin-left: 32px;
+}
+
+.acceptedFile:not(:last-child) > .filenameAndRemove {
+    border-bottom: 1px solid rgba(33, 33, 33, 0.08);
+}
+
+.deleteButton {
+    color: #000000;
+}
