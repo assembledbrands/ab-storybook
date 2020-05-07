@@ -9,13 +9,36 @@ module.exports = {
     '@storybook/addon-storysource',
     '@storybook/preset-typescript'
   ],
-  // webpackFinal: async (config, { configType }) => {
-  //   config.module.rules.push({
-  //     test: /\.module\.css$/,
-  //     exclude: /\.module\.css$/,
-  //     use: ['style-loader', 'css-loader'],
-  //     include: path.resolve(__dirname, '../src/'),
-  //   });
-  //   return config;
-  // },
+  webpackFinal: async (config, { configType }) => {
+    config.module.rules = config.module.rules.filter(f => f.test.toString() !== '/\\.css$/');
+    config.module.rules.push({
+      test: /\.css$/,
+      sideEffects: true,
+      include: path.resolve(__dirname, '../'),
+      use: [
+        'style-loader',
+        {
+          loader: 'css-loader',
+          options: {
+            importLoaders: 1,
+            localsConvention: 'camelCase',
+            modules: true,
+          },
+        }
+      ]
+    });
+    config.module.rules.push({
+      test: /\.(png|otf|svg)$/,
+      use: [
+        {
+          loader: 'file-loader',
+          query: {
+            name: '[name].[ext]'
+          }
+        }
+      ],
+      include: path.resolve(__dirname, '../')
+    });
+    return config;
+  },
 }
