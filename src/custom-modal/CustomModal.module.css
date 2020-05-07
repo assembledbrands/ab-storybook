@@ -1,0 +1,46 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 70px 30px 70px;
+    background: #FFFDFB;
+    box-shadow: 0px 11px 15px rgba(0, 0, 0, 0.2), 0px 9px 46px rgba(0, 0, 0, 0.12), 0px 24px 38px rgba(0, 0, 0, 0.14);
+}
+
+.container > span:not(:last-child) {
+    font-family: Futura Std;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 48px;
+    line-height: 56px;
+    text-align: center;
+    color: #000000;
+}
+
+.container > p {
+    font-family: Futura Std;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.5px;
+    color: #000000;
+    margin-bottom: 30px;
+}
+
+.button {
+    background: #2D6AD2;
+    border-radius: 4px;
+}
+
+.container > span:last-child {
+    font-family: Futura Std;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: center;
+    letter-spacing: 0.4px;
+    color: #2D6AD2;
+    margin-top: 30px;
+}
